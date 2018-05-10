@@ -14,8 +14,14 @@ function draw(){
 
     if (game.isDead)
         background("black");
-    else
+    else {
+        if(game.coinTimer > 0) {
+            game.coinTimer--;
+            background("pink")
+        }
+        else
         background("yellow");
+    }
         
     drawGameState(game);
 }

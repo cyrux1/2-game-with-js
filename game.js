@@ -12,6 +12,8 @@ function createGameState(){
     game.coinX = 0;
     game.coinY = 0;
 
+    game.coinTimer = 0;
+
     var grid = [];
     grid.push([1,1,1,1,1]);
     grid.push([1,0,0,0,1]);
@@ -85,6 +87,7 @@ function updateGameState(game){
     if (hitCoin(game)){
         game.score += 100;
         setRandomCoin(game);
+        game.coinTimer = 10;
     }
 }
 
